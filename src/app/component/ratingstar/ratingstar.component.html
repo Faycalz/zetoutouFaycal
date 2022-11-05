@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="crop" [style.width.px]="cropwidth"
+[title]="rating"
+(click)="onClick()"
+(ratingClicked)="onRatingClicked($event)"
+>
+
+    <div style="width: 95px" [ngClass]="classes">
+        
+        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+        <span><i class="fa-sharp fa-solid fa-star"></i></span>
+        
+    </div>
+</div>

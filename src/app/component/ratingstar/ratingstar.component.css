@@ -1,0 +1,17 @@
+.crop{
+    overflow: hidden;
+}
+div{
+    cursor: pointer;
+}
+div .primary-star{
+    
+    color: #FFDF00;
+    
+}
+
+div .secondary-star{
+    
+    color: rgb(255, 32, 32);
+    
+}
