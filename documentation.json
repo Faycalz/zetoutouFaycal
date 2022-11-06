@@ -22,7 +22,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-419b053325ff5c2174dfa7f3969e90b1375cfebdf93f7e6303630501be3dbabd7abba06e562fb496b490e1c8cdfb59a25b42e37fc79965b8a177285341fdb911",
+            "id": "component-AppComponent-f9b1854d8d2bafd6308adb72c7d1c1386c65597c5285d6bd255644db02f6bacfe7bb4d43f501e031c8ca1923d853c597049f61145374e9e22ec260cb44214260",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -42,6 +42,16 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
+                    "name": "faStar",
+                    "defaultValue": "faStar",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
                     "name": "title",
                     "defaultValue": "'storybook'",
                     "deprecated": false,
@@ -60,7 +70,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  title = 'storybook';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { faStar } from \"@fortawesome/free-regular-svg-icons\";\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  title = 'storybook';\n    faStar = faStar;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -269,6 +279,106 @@
             "stylesData": ""
         },
         {
+            "name": "HeroComponent",
+            "id": "component-HeroComponent-dd56c6ff341385424a93461f7593cb172296f7e6c9b953e97ae790c29b17b9032b2723976cbcf4997e492b0ea94a837a4f844c709860c116735da479840ba93b",
+            "file": "src/app/component/hero/hero.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-hero",
+            "styleUrls": [
+                "./hero.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./hero.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "color",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"primary\" | \"secondary\"",
+                    "decorators": []
+                },
+                {
+                    "name": "href",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "target",
+                    "defaultValue": "'_self'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "\"_self\" | \"_blank\" | \"_parent\" | \"_top\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-hero',\n  templateUrl: './hero.component.html',\n  styleUrls: ['./hero.component.css']\n})\nexport class HeroComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n  @Input()\n  color: 'primary' | 'secondary' = 'primary';\n  @Input()\n  href!: string;\n  @Input()\n  target?: '_self' | '_blank' | '_parent' | '_top' = '_self';\n  \n  public get classes(): Array<string> {\n    return ['hero', `${this.color}-header`];\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "\r\n\r\n\r\n.primary-header{\r\n   \r\n    background-color: #0151cc;\r\n    color: #fff;\r\n    min-height: 400px;\r\n}\r\n.secondary-header{\r\n   \r\n    background-color: #8c01cc;\r\n    color: #fff;\r\n    min-height: 400px;\r\n}\r\n\r\n.header .container{\r\n\r\n    margin: 10 20px;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-around;\r\n    justify-items: center;\r\n}\r\n.header h1 {\r\n    font-size: 3rem;\r\n    line-height: 1.0;\r\n}\r\n.header img {\r\n    max-width: 500px;\r\n    \r\n}\r\n\r\n.text {\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    padding-left: 10px;\r\n}",
+                    "styleUrl": "./hero.component.css"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 8
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "",
+                        "returnType": "Array<string>",
+                        "line": 21
+                    }
+                }
+            },
+            "templateData": "<header class=\"header\" [ngClass]=\"classes\">\n    <div class=\"container\" fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\n        <div class=\"text\">\n            <h1>Welcome to {{content}}</h1>\n            <p>{{ discription }}</p>\n            \n        </div>\n        <img src=\"../../assets/Coding workshop-pana.svg\" alt=\"\">\n    </div>\n</header>"
+        },
+        {
             "name": "Navbar1Component",
             "id": "component-Navbar1Component-4623d0dade6512013da5b25e5a529eed2173e18c144853d9699cddbb6ccdded6b84ac0f98c6e0d7c9d16923877d1027461db9fdaff672de319289ea99f1686a3",
             "file": "src/app/component/navbar1/navbar1.component.ts",
@@ -450,7 +560,7 @@
         },
         {
             "name": "RatingstarComponent",
-            "id": "component-RatingstarComponent-f1fa2d7ba0e9eefa59c5074e07c95ce904d8e65430c862f8bc145e115941e03c28dfb7423545550b8b1407943755a818e942f0a91701f2bb65b7ce691cad836c",
+            "id": "component-RatingstarComponent-c0f274aad4eab3d9a5845ee8ceaa347a04039d536db98cae64f9c8d8563a28fbb8a272a91a3e9a934ae565830b9acf7fcb1c41f49d6c0434572eb06ba56af3c7",
             "file": "src/app/component/ratingstar/ratingstar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -472,7 +582,7 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 19,
                     "type": "\"primary\" | \"secondary\"",
                     "decorators": []
                 },
@@ -480,7 +590,7 @@
                     "name": "href",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 21,
                     "type": "string",
                     "decorators": []
                 },
@@ -488,7 +598,7 @@
                     "name": "rating",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 15,
                     "type": "number",
                     "decorators": []
                 },
@@ -497,7 +607,7 @@
                     "defaultValue": "'_self'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 23,
                     "type": "\"_self\" | \"_blank\" | \"_parent\" | \"_top\"",
                     "decorators": []
                 }
@@ -508,7 +618,7 @@
                     "defaultValue": "new EventEmitter<string>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 16,
                     "type": "EventEmitter<string>"
                 }
             ],
@@ -521,7 +631,17 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 24
+                },
+                {
+                    "name": "faCoffee",
+                    "defaultValue": "faCoffee",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
                 },
                 {
                     "name": "faStar",
@@ -531,7 +651,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 12
                 }
             ],
             "methodsClass": [
@@ -541,7 +661,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -551,7 +671,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -563,11 +683,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, OnInit , Output} from '@angular/core';\nimport { faStar } from \"@fortawesome/free-regular-svg-icons\";\n@Component({\n  selector: 'app-ratingstar',\n  templateUrl: './ratingstar.component.html',\n  styleUrls: ['./ratingstar.component.css']\n})\nexport class RatingstarComponent implements OnInit {\n\n  constructor() { }\n  faStar = faStar;\n\n  @Input() rating! : number;\n  @Output() ratingClicked : EventEmitter<string> = new EventEmitter<string>();\n\n  @Input()\n  color: 'primary' | 'secondary' = 'primary';\n  @Input()\n  href!: string;\n  @Input()\n  target?: '_self' | '_blank' | '_parent' | '_top' = '_self';\n  cropwidth : number = 75;\n  ngOnInit(): void {\n    this.cropwidth = this.rating*90/5;\n    // console.log( `rating is ${this.rating}` );\n  }\n  onClick(){\n    this.ratingClicked.emit( `rating is ${this.rating}` );\n  }\n\n\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnChanges, OnInit , Output} from '@angular/core';\nimport { faStar } from \"@fortawesome/free-regular-svg-icons\";\nimport { faCoffee } from '@fortawesome/free-solid-svg-icons';\n@Component({\n  selector: 'app-ratingstar',\n  templateUrl: './ratingstar.component.html',\n  styleUrls: ['./ratingstar.component.css']\n})\nexport class RatingstarComponent implements OnInit {\n\n  constructor() { }\n  faStar = faStar;\n  faCoffee = faCoffee;\n\n  @Input() rating! : number;\n  @Output() ratingClicked : EventEmitter<string> = new EventEmitter<string>();\n\n  @Input()\n  color: 'primary' | 'secondary' = 'primary';\n  @Input()\n  href!: string;\n  @Input()\n  target?: '_self' | '_blank' | '_parent' | '_top' = '_self';\n  cropwidth : number = 75;\n  ngOnInit(): void {\n    this.cropwidth = this.rating*90/5;\n    // console.log( `rating is ${this.rating}` );\n  }\n  onClick(){\n    this.ratingClicked.emit( `rating is ${this.rating}` );\n  }\n  public get classes(): Array<string> {\n    return ['star', `${this.color}-star`];\n  }\n\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\ndiv{\r\n    cursor: pointer;\r\n}",
+                    "data": ".crop{\r\n    overflow: hidden;\r\n}\r\ndiv{\r\n    cursor: pointer;\r\n}\r\ndiv .primary-star{\r\n    \r\n    color: #FFDF00;\r\n    \r\n}\r\n\r\ndiv .secondary-star{\r\n    \r\n    color: rgb(255, 32, 32);\r\n    \r\n}",
                     "styleUrl": "./ratingstar.component.css"
                 }
             ],
@@ -578,96 +698,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"crop\" [style.width.px]=\"cropwidth\"\n[title]=\"rating\"\n(click)=\"onClick()\"\n(ratingClicked)=\"onRatingClicked($event)\"\n>\n\n    <div style=\"width: 95px\">\n        <span><fa-icon [icon]=\"faStar\"></fa-icon></span>\n        <span><fa-icon [icon]=\"faStar\"></fa-icon></span>\n        <span><fa-icon [icon]=\"faStar\"></fa-icon></span>\n        <span><fa-icon [icon]=\"faStar\"></fa-icon></span>\n        <span><fa-icon [icon]=\"faStar\"></fa-icon></span>\n        \n    </div>\n</div>\n"
-        },
-        {
-            "name": "StarratingComponent",
-            "id": "component-StarratingComponent-8da8db01b8d7abf581552733866a20d3b6d736176d702089e612e4b39010f2802ca8796b62f986109945661792e4df363cf000ba496c695ccf51b100fa8fc146",
-            "file": "src/app/component/starrating/starrating.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-starrating",
-            "styleUrls": [
-                "./starrating.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./starrating.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "color",
-                    "defaultValue": "'primary'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "\"primary\" | \"secondary\"",
-                    "decorators": []
-                },
-                {
-                    "name": "href",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 17,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "target",
-                    "defaultValue": "'_self'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 19,
-                    "type": "\"_self\" | \"_blank\" | \"_parent\" | \"_top\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-starrating',\n  templateUrl: './starrating.component.html',\n  styleUrls: ['./starrating.component.css']\n})\nexport class StarratingComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n  @Input()\n  color: 'primary' | 'secondary' = 'primary';\n  @Input()\n  href!: string;\n  @Input()\n  target?: '_self' | '_blank' | '_parent' | '_top' = '_self';\n  \n  public get classes(): Array<string> {\n    return ['navbar', `${this.color}-navbar`];\n  }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "/* You can add global styles to this file, and also import other style files */\r\n\r\nimg{\r\n    max-width: 100%;\r\n}\r\nh1 , h2{\r\n    margin-bottom: 10px;\r\n}\r\nul{\r\n    list-style-type: none;\r\n}\r\n.container{\r\n    \r\n    max-width: 1100px;\r\n    margin: 0 auto;\r\n    padding: 0 30px;\r\n}\r\n\r\n.primary-navbar{\r\n    background-color: #3474e4;\r\n    color: #fff;\r\n    height: 60px;\r\n    height: 100%;\r\n}\r\n\r\n.secondary-navbar{\r\n    background-color: #0f7077;\r\n    color: #fff;\r\n    height: 60px;\r\n    height: 100%;\r\n}\r\n\r\n.navbar .container{\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    justify-items: center;\r\n}\r\n.navbar .logo{\r\n    font-size: x-large;\r\n    font-weight: bold;\r\n    margin-top: 10px;\r\n}\r\n.navbar .nav{\r\n    display: flex;\r\n}\r\n.navbar a {\r\n    text-decoration: none;\r\n    color: #fff;\r\n    font-size: 17px;\r\n    font-weight: bold;\r\n}\r\n.secondary-navbar a:hover{\r\n    color: rgb(229, 241, 245);\r\n}\r\n.primary-navbar a:hover{\r\n    color: lightblue;\r\n}\r\n.navbar ul li {\r\n    margin-left: 20px;\r\n}\r\n\r\n",
-                    "styleUrl": "./starrating.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
+                "line": 9
             },
             "implements": [
                 "OnInit"
@@ -679,23 +710,23 @@
                         "name": "classes",
                         "type": "",
                         "returnType": "Array<string>",
-                        "line": 21
+                        "line": 32
                     }
                 }
             },
-            "templateData": "<nav class=\"navbar\"  [ngClass]=\"classes\">\n    <div class=\"container\" >\n        <div class=\"logo\">{{ content }}</div>\n        <ul class=\"nav\" >\n            <li> <a href=\"#\">Home</a></li>\n            <li> <a href=\"#\">About</a></li>\n            <li> <a href=\"#\">Contact</a></li>\n        </ul>\n    </div>\n</nav>\n"
+            "templateData": "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css\" integrity=\"sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\n<div class=\"crop\" [style.width.px]=\"cropwidth\"\n[title]=\"rating\"\n(click)=\"onClick()\"\n(ratingClicked)=\"onRatingClicked($event)\"\n>\n\n    <div style=\"width: 95px\" [ngClass]=\"classes\">\n        \n        <span><i class=\"fa-sharp fa-solid fa-star\"></i></span>\n        <span><i class=\"fa-sharp fa-solid fa-star\"></i></span>\n        <span><i class=\"fa-sharp fa-solid fa-star\"></i></span>\n        <span><i class=\"fa-sharp fa-solid fa-star\"></i></span>\n        <span><i class=\"fa-sharp fa-solid fa-star\"></i></span>\n        \n    </div>\n</div>\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-f6b01ec079c398d3525f7b8e4bdab2dc726265efd111f678fd2ece9cf8d85894a6f43db309b096684f42d9b48af640aa72fc0cddb8cb7f5c06a50fd2566d059c",
+            "id": "module-AppModule-1034a88010e26909d5b62a5e262b2805496fc35870fbeb773b445ba288ba3a7c71889ad05a9a6e80039b9e601745e0d8092f40a31c42d4a9724e38bf9a2db9a6",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { Navbar1Component } from './component/navbar1/navbar1.component';\nimport { RatingstarComponent } from './component/ratingstar/ratingstar.component';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { StarratingComponent } from './component/starrating/starrating.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    Navbar1Component,\n    RatingstarComponent,\n    StarratingComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FontAwesomeModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { Navbar1Component } from './component/navbar1/navbar1.component';\nimport { RatingstarComponent } from './component/ratingstar/ratingstar.component';\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\nimport { HeroComponent } from './component/hero/hero.component';\n\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    Navbar1Component,\n    RatingstarComponent,\n    HeroComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FontAwesomeModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -708,13 +739,13 @@
                             "name": "AppComponent"
                         },
                         {
+                            "name": "HeroComponent"
+                        },
+                        {
                             "name": "Navbar1Component"
                         },
                         {
                             "name": "RatingstarComponent"
-                        },
-                        {
-                            "name": "StarratingComponent"
                         }
                     ]
                 },
@@ -787,6 +818,16 @@
                 "name": "Base",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/component/hero/stories/hero.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/component/navbar1/stories/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -798,16 +839,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Base",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/component/starrating/stories/star.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -827,6 +858,16 @@
                 "name": "defaultValue",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/component/hero/stories/hero.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'#ff00ff'"
+            },
+            {
+                "name": "defaultValue",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/component/navbar1/stories/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -840,18 +881,8 @@
                 "file": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "string",
-                "defaultValue": "'#ff00ff'"
-            },
-            {
-                "name": "defaultValue",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/component/starrating/stories/star.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "string",
-                "defaultValue": "'#ff00ff'"
+                "type": "number",
+                "defaultValue": "5"
             },
             {
                 "name": "environment",
@@ -877,7 +908,7 @@
                 "name": "groupId",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/component/navbar1/stories/nav.stories.ts",
+                "file": "src/app/component/hero/stories/hero.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
@@ -887,21 +918,21 @@
                 "name": "groupId",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
+                "file": "src/app/component/navbar1/stories/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
                 "defaultValue": "'GROUP-ID1'"
             },
             {
-                "name": "groupId",
+                "name": "label",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/component/starrating/stories/star.stories.ts",
+                "file": "src/app/component/hero/stories/hero.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "'GROUP-ID1'"
+                "defaultValue": "'Color'"
             },
             {
                 "name": "label",
@@ -921,17 +952,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
-                "defaultValue": "'Color'"
-            },
-            {
-                "name": "label",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/component/starrating/stories/star.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "string",
-                "defaultValue": "'Color'"
+                "defaultValue": "'rating'"
             },
             {
                 "name": "Large",
@@ -982,6 +1003,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "options",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    range: true,\r\n    min: 0,\r\n    max: 5,\r\n    step: 1,\r\n  }"
             },
             {
                 "name": "Primary",
@@ -1056,6 +1087,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/component/hero/stories/hero.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<HeroComponent>",
+                "defaultValue": "() => ({\r\n  component: HeroComponent,\r\n  props: {\r\n    \r\n\r\n\r\n\r\n    \r\n    // we use the select knob to set the color value\r\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\r\n    content: text('Text', 'WissalTech'),\r\n    discription : text('Discription' , 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi.'),\r\n    href: 'https://storybook.js.org/',\r\n    target: '_blank',\r\n  },\r\n  template: `<app-hero [color]=\"color\"\r\n  [href]=\"href\"\r\n  [target]=\"target\">{{ content }}</app-hero>`,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/component/navbar1/stories/nav.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1070,23 +1111,65 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<RatingstarComponent>",
-                "defaultValue": "() => ({\r\n  component: RatingstarComponent,\r\n  props: {\r\n    \r\n    // we use the select knob to set the color value\r\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\r\n    content: text('Text', 'WissalTech'),\r\n    rating: 3,\r\n    target: '_blank',\r\n  },\r\n  template: `<app-ratingstar\r\n  [rating]=\"rating\"\r\n  [color]=\"color\"\r\n  ></app-ratingstar>`,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/component/starrating/stories/star.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<StarratingComponent>",
-                "defaultValue": "() => ({\r\n  component: StarratingComponent,\r\n  props: {\r\n    \r\n\r\n\r\n\r\n    \r\n    // we use the select knob to set the color value\r\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\r\n    content: text('Text', 'WissalTech'),\r\n    href: 'https://storybook.js.org/',\r\n    target: '_blank',\r\n  },\r\n  template: `<app-starrating [color]=\"color\"\r\n  [href]=\"href\"\r\n  [target]=\"target\">{{ content }}</app-starrating>`,\r\n})"
+                "defaultValue": "() => ({\r\n  component: RatingstarComponent,\r\n  props: {\r\n    \r\n    // we use the select knob to set the color value\r\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\r\n    rating: number(label, defaultValue, options),\r\n    target: '_blank',\r\n  },\r\n  template: `<app-ratingstar\r\n  [rating]=\"rating\"\r\n  [color]=\"color\"\r\n  ></app-ratingstar>`,\r\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/component/hero/stories/hero.stories.ts": [
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/component/hero/stories/hero.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "defaultValue",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/component/hero/stories/hero.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'#ff00ff'"
+                },
+                {
+                    "name": "groupId",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/component/hero/stories/hero.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'GROUP-ID1'"
+                },
+                {
+                    "name": "label",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/component/hero/stories/hero.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'Color'"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/component/hero/stories/hero.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<HeroComponent>",
+                    "defaultValue": "() => ({\r\n  component: HeroComponent,\r\n  props: {\r\n    \r\n\r\n\r\n\r\n    \r\n    // we use the select knob to set the color value\r\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\r\n    content: text('Text', 'WissalTech'),\r\n    discription : text('Discription' , 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi.'),\r\n    href: 'https://storybook.js.org/',\r\n    target: '_blank',\r\n  },\r\n  template: `<app-hero [color]=\"color\"\r\n  [href]=\"href\"\r\n  [target]=\"target\">{{ content }}</app-hero>`,\r\n})"
+                }
+            ],
             "src/app/component/navbar1/stories/nav.stories.ts": [
                 {
                     "name": "Base",
@@ -1157,18 +1240,8 @@
                     "file": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
-                    "defaultValue": "'#ff00ff'"
-                },
-                {
-                    "name": "groupId",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "defaultValue": "'GROUP-ID1'"
+                    "type": "number",
+                    "defaultValue": "5"
                 },
                 {
                     "name": "label",
@@ -1178,7 +1251,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
-                    "defaultValue": "'Color'"
+                    "defaultValue": "'rating'"
+                },
+                {
+                    "name": "options",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    range: true,\r\n    min: 0,\r\n    max: 5,\r\n    step: 1,\r\n  }"
                 },
                 {
                     "name": "Template",
@@ -1188,59 +1271,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<RatingstarComponent>",
-                    "defaultValue": "() => ({\r\n  component: RatingstarComponent,\r\n  props: {\r\n    \r\n    // we use the select knob to set the color value\r\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\r\n    content: text('Text', 'WissalTech'),\r\n    rating: 3,\r\n    target: '_blank',\r\n  },\r\n  template: `<app-ratingstar\r\n  [rating]=\"rating\"\r\n  [color]=\"color\"\r\n  ></app-ratingstar>`,\r\n})"
-                }
-            ],
-            "src/app/component/starrating/stories/star.stories.ts": [
-                {
-                    "name": "Base",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/component/starrating/stories/star.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "defaultValue",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/component/starrating/stories/star.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "defaultValue": "'#ff00ff'"
-                },
-                {
-                    "name": "groupId",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/component/starrating/stories/star.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "defaultValue": "'GROUP-ID1'"
-                },
-                {
-                    "name": "label",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/component/starrating/stories/star.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "defaultValue": "'Color'"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/component/starrating/stories/star.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<StarratingComponent>",
-                    "defaultValue": "() => ({\r\n  component: StarratingComponent,\r\n  props: {\r\n    \r\n\r\n\r\n\r\n    \r\n    // we use the select knob to set the color value\r\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\r\n    content: text('Text', 'WissalTech'),\r\n    href: 'https://storybook.js.org/',\r\n    target: '_blank',\r\n  },\r\n  template: `<app-starrating [color]=\"color\"\r\n  [href]=\"href\"\r\n  [target]=\"target\">{{ content }}</app-starrating>`,\r\n})"
+                    "defaultValue": "() => ({\r\n  component: RatingstarComponent,\r\n  props: {\r\n    \r\n    // we use the select knob to set the color value\r\n    color: select('Color', ['primary', 'secondary'] , 'primary'),\r\n    rating: number(label, defaultValue, options),\r\n    target: '_blank',\r\n  },\r\n  template: `<app-ratingstar\r\n  [rating]=\"rating\"\r\n  [color]=\"color\"\r\n  ></app-ratingstar>`,\r\n})"
                 }
             ],
             "src/test.ts": [
@@ -1433,7 +1464,66 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/hero/hero.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeroComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/hero/stories/hero.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/hero/stories/hero.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "defaultValue",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/hero/stories/hero.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "groupId",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/hero/stories/hero.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "label",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/hero/stories/hero.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1501,7 +1591,7 @@
                 "linktype": "component",
                 "name": "RatingstarComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/12",
                 "status": "low"
             },
             {
@@ -1529,16 +1619,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "groupId",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "label",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -1549,62 +1629,13 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "options",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/app/component/starrating/starrating.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "StarratingComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/starrating/stories/star.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Base",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/starrating/stories/star.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "defaultValue",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/starrating/stories/star.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "groupId",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/starrating/stories/star.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "label",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/starrating/stories/star.stories.ts",
+                "filePath": "src/app/component/ratingstar/stories/ratingstar.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

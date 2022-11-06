@@ -1,0 +1,39 @@
+
+
+
+.primary-header{
+   
+    background-color: #0151cc;
+    color: #fff;
+    min-height: 400px;
+}
+.secondary-header{
+   
+    background-color: #8c01cc;
+    color: #fff;
+    min-height: 400px;
+}
+
+.header .container{
+
+    margin: 10 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+}
+.header h1 {
+    font-size: 3rem;
+    line-height: 1.0;
+}
+.header img {
+    max-width: 500px;
+    
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+}

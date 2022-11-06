@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { Navbar1Component } from './component/navbar1/navbar1.component';
 import { RatingstarComponent } from './component/ratingstar/ratingstar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HeroComponent } from './component/hero/hero.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     Navbar1Component,
-    RatingstarComponent
+    RatingstarComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
